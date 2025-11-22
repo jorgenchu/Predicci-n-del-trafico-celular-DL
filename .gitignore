@@ -1,0 +1,9 @@
+# Datasets
+data1.csv/
+data2.csv/
+
+# Executables
+*.exe
+
+# Jupyter Notebooks
+.ipynb_checkpoints/

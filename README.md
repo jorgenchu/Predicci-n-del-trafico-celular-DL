@@ -2,20 +2,9 @@
 
 Este repositorio contiene el código y los análisis para el Trabajo de Fin de Máster (TFM) sobre dinámicas de tráfico de telecomunicaciones. El proyecto analiza grandes volúmenes de datos de SMS, llamadas e Internet en la ciudad de Milán, explorando patrones temporales, distribución espacial y modelos de predicción basados en Deep Learning.
 
-## 📂 Contenido del Repositorio
 
-*   **`analysis.ipynb`**: Notebook de análisis exploratorio y visualización.
-    *   **Carga eficiente** de datos masivos usando `Dask`.
-    *   **Análisis temporal**: Selección automática de una semana aleatoria (Lunes-Domingo).
-    *   **Análisis espacial 3D**: Visualización de la distribución del tráfico (SMS, Llamadas, Internet) en la cuadrícula urbana.
-    *   **Animación Spatio-temporal**: Evolución dinámica del tráfico SMS.
-*   **`prediction_model.ipynb`**: Notebook de implementación del modelo de predicción.
-    *   **ST-DenseNet**: Red Neuronal Convolucional Densamente Conectada para predicción espacio-temporal.
-    *   **Pipeline completo**: Preprocesamiento, construcción de tensores, entrenamiento (PyTorch) y evaluación.
-*   **`requirements.txt`**: Lista de dependencias del proyecto.
-*   **`RESULTS.md`**: Tablas resumen con los datos más relevantes del análisis.
 
-## 🚀 Instalación y Configuración
+## Instalación y Configuración
 
 ### 1. Clonar el Repositorio
 
@@ -52,9 +41,7 @@ Si tienes una tarjeta gráfica muy reciente (ej. RTX 5080) y Windows, es probabl
 
 1.  **Abrir WSL**: Abre una terminal de Ubuntu/WSL.
 2.  **Navegar al proyecto**:
-    ```bash
-    cd /mnt/c/Users/jorge/Desktop/TFM\ DATA
-    ```
+  
 3.  **Instalar dependencias**:
     ```bash
     sudo apt update
@@ -69,7 +56,7 @@ Si tienes una tarjeta gráfica muy reciente (ej. RTX 5080) y Windows, es probabl
 
 **Nota:** Si ejecutas el notebook desde el CMD de Windows, usará la **CPU** (más lento).
 
-## ▶️ Uso
+## Uso
 
 1.  Coloca los archivos de datos (`data1.csv`, `data2.csv`) en las carpetas correspondientes.
 2.  Inicia Jupyter Notebook:
@@ -77,14 +64,13 @@ Si tienes una tarjeta gráfica muy reciente (ej. RTX 5080) y Windows, es probabl
     jupyter notebook
     ```
 3.  Ejecuta `analysis.ipynb` para ver las estadísticas y visualizaciones.
-4.  Ejecuta `prediction_model.ipynb` para entrenar y evaluar el modelo de predicción.
+4.  Ejecuta `prediction_model.ipynb` para entrenar y evaluar el modelo de predicción (Hay varios prediction models segun el tipo de dato (SMS, llamada in, out ...)).
 
-## 🧠 Modelo de Predicción (ST-DenseNet)
+## Modelo de Predicción (ST-DenseNet)
 
 El proyecto implementa una arquitectura de **Deep Learning** para predecir el tráfico de SMS:
 *   **Entrada**: Tensores 4D que capturan la dependencia de **Proximidad** (últimas horas) y **Periodo** (misma hora de días anteriores).
-*   **Arquitectura**: Dos ramas de CNN con bloques densos (Dense Blocks) que aprenden características espacio-temporales, fusionadas mediante una matriz paramétrica.
-*   **Objetivo**: Minimizar el Error Cuadrático Medio (MSE) en la predicción del tráfico futuro.
+*   **Arquitectura**: Dos ramas de CNN con Dense Blocks que aprenden características espacio-temporales, fusionadas mediante una matriz paramétrica.
 
 ## 🛠️ Tecnologías Utilizadas
 
